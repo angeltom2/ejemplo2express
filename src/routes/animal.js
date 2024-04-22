@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router(); //manejador de rutas de express
 const animalSchema = require("../models/animal");
-<<<<<<< HEAD
+
 const verifyToken = require('./validate_token');
-=======
->>>>>>> 2fab2e60a07282b518832b18317485cc1505cc54
+
 //Nuevo animal
 router.post("/animals", (req, res) => {
     const animal = animalSchema(req.body);
@@ -14,7 +13,7 @@ router.post("/animals", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 module.exports = router;
-<<<<<<< HEAD
+
 
 router.get("/animals",verifyToken, (req, res) => {
     animalSchema
@@ -53,5 +52,4 @@ router.delete("/animals/:id", (req, res) => {
             res.json({ message: error });
         });
 });
-=======
->>>>>>> 2fab2e60a07282b518832b18317485cc1505cc54
+

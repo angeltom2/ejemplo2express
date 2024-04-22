@@ -16,20 +16,19 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const animalRoutes = require("./routes/animal");
-<<<<<<< HEAD
-const authRoutes= require("./routes/autentication");
-=======
->>>>>>> 2fab2e60a07282b518832b18317485cc1505cc54
+
+const authRoutes = require("./routes/autentication");
+
+
 const mongoose = require("mongoose");
 require('dotenv').config();
 app.use(parser.urlencoded({ extended: false })); //permite leer los datos que vienen en la petición
 app.use(parser.json()); // transforma los datos a formato JSON
 //Gestión de las rutas usando el middleware
 app.use("/api", animalRoutes);
-<<<<<<< HEAD
-app.use("/api",authRoutes);
-=======
->>>>>>> 2fab2e60a07282b518832b18317485cc1505cc54
+
+app.use("/api", authRoutes);
+
 app.use(express.json());
 //Conexión a la base de datos
 mongoose
@@ -40,3 +39,4 @@ mongoose
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
+
